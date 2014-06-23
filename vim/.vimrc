@@ -21,7 +21,9 @@ Bundle 'jimsei/winresizer'
 Bundle 'bling/vim-airline'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'vim-pandoc/vim-pandoc-syntax'
 Bundle 'tomasr/molokai'
+Bundle 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -118,3 +120,12 @@ set laststatus=2
 
 " bufexplorer
 map <Leader>f <Leader>be
+
+" vim-pandoc
+let g:pandoc#modules#enabled = ["formatting", "folding", "command", 
+                                \ "menu", "keyboard"]
+
+" spellcheck
+nmap <silent> <leader>ze :setlocal spell spelllang=en<CR>
+nmap <silent> <leader>zs :setlocal spell spelllang=es<CR>
+nmap <silent> <leader>zo :setlocal nospell<CR>
