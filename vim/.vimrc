@@ -24,6 +24,7 @@ Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'vim-pandoc/vim-pandoc-syntax'
 Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-fugitive'
+Bundle 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,6 +59,8 @@ set expandtab
 
 set incsearch
 
+set hidden
+
 filetype plugin indent on
 filetype plugin on
 
@@ -70,8 +73,13 @@ colorscheme molokai
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
 let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+let g:SuperTabContextDiscoverDiscovery = ["&omnifunc:<c-x><c-o>", "&completefunc:<c-x><c-u>"]
 let g:SuperTabClosePreviewOnPopupClose = 1
+autocmd FileType * 
+      \ if &omnifunc != '' |
+      \ call SuperTabChain(&omnifunc, "<c-p>") |
+      \ call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
+      \ endif
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -92,8 +100,8 @@ nnoremap <leader>ec :JavaDocComment<cr>
 nnoremap <leader>eb :ProjectBuild<cr>
 
 " Easier window switching
-noremap <C-Up> <C-W>w
-noremap <C-Down> <C-W>W
+noremap <C-Up> <C-W>W
+noremap <C-Down> <C-W>w
 noremap <C-Right> <C-W>l
 noremap <C-Left> <C-W>h
 
@@ -129,3 +137,10 @@ let g:pandoc#modules#enabled = ["formatting", "folding", "command",
 nmap <silent> <leader>ze :setlocal spell spelllang=en<CR>
 nmap <silent> <leader>zs :setlocal spell spelllang=es<CR>
 nmap <silent> <leader>zo :setlocal nospell<CR>
+
+" location key bindings
+nmap <silent> <leader>ln :lne<CR>
+nmap <silent> <leader>lp :lp<CR>
+
+" Jedi
+let g:jedi#popup_on_dot = 0
