@@ -86,6 +86,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_show_hidden = 0
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_max_files=0
 
 " NERDTree
 map <silent> <C-n> :NERDTreeFocus<CR>
