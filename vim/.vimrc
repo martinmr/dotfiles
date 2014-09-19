@@ -25,6 +25,7 @@ Bundle 'vim-pandoc/vim-pandoc-syntax'
 Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-fugitive'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'lervag/vim-latex'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,7 +51,7 @@ map <Space> <Leader>
 set showcmd
 set nu
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 set backspace=2
 
 set tabstop=4
