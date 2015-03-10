@@ -22,10 +22,22 @@ Bundle 'bling/vim-airline'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'vim-pandoc/vim-pandoc-syntax'
-Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-fugitive'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'lervag/vim-latex'
+Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'nsf/gocode', {'rtp': 'vim/'}
+Bundle 'fatih/vim-go'
+Bundle 'fatih/molokai'
+Bundle 'vim-scripts/Tagbar'
+Bundle 'moll/vim-node'
+Bundle 'scrooloose/syntastic'
+Bundle 'walm/jshint.vim'
+Bundle 'ahayman/vim-nodejs-complete'
+Bundle 'pangloss/vim-javascript'
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'einars/js-beautify'
+Bundle 'kchmck/vim-coffee-script'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -57,6 +69,8 @@ set backspace=2
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smarttab
+set cindent
 
 set incsearch
 
@@ -68,6 +82,7 @@ filetype plugin on
 syntax enable
 
 set t_Co=256
+set background=dark
 colorscheme molokai
 
 " SuperTab
@@ -146,3 +161,15 @@ nmap <silent> <leader>lp :lp<CR>
 
 " Jedi
 let g:jedi#popup_on_dot = 0
+
+" Go
+let g:go_highlight_array_whitespace_error = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_trailing_whitespace_error = 1
+
+"JsBeautify
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
