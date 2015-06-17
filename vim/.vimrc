@@ -38,6 +38,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'einars/js-beautify'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mikewest/vimroom'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -173,3 +174,6 @@ let g:go_highlight_trailing_whitespace_error = 1
 
 "JsBeautify
 autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+
+"Latex
+let g:tex_conceal = ""
